@@ -3,9 +3,10 @@ bookstore
 
 BookStore_XH - a CMSimple_XH Plugin
 
+http://www.do.comeze.com/BookStore_XH_Plugin
+
 Version: 1.1 RC1
 Copyright (c) 2012 Lubomyr Kudray
-http://www.do.comeze.com/BookStore_XH_Plugin
 
 Requirements: PHP, jQuery
 
