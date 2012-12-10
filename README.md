@@ -5,7 +5,7 @@ BookStore_XH - a CMSimple_XH Plugin
 
 http://www.do.comeze.com/BookStore_XH_Plugin
 
-Version: 1.1 RC1
+Version: 1.2
 Copyright (c) 2012 Lubomyr Kudray
 
 Requirements: PHP, jQuery
@@ -24,6 +24,7 @@ Features
     Uploaded image setting
     Book record edit and delete
     Section add and delete
+    SEO secure links
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
