@@ -617,7 +617,7 @@ function bookstore() {
     . tag('input id="bs_book_add_sitename" name="book_add_sitename" type="text" maxlength="'.$pcf['book_maxlength_b'].'" value=""') . tag('br')."\n"
 /* book External file */
     . '<label class="bs_label" for="bs_book_add_external"><span class="bs_optional">*</span>'.$ptx['bs_external_file']." ".'<span class="bs_optional">'.$text_length_e.'</span></label>'."\n"
-    . tag('input id="bs_book_add_external" name="book_add_external" type="url" maxlength="'.$pcf['book_maxlength_e'].'" value="http://"') . '</span>'. tag('br')."\n"
+    . tag('input id="bs_book_add_external" name="book_add_external" type="url" maxlength="'.$pcf['book_maxlength_e'].'" value="http://"') . tag('br')."\n"
 /* book Read online */
     . '<label class="bs_label" for="bs_book_read_online_link"><span class="bs_optional">*</span>'.$ptx['bs_read_online']." ".'<span class="bs_optional">'.$text_length_e.'</span></label>'."\n"
     . tag('input id="bs_book_read_online_link" name="book_read_online_link" type="url" maxlength="'.$pcf['book_maxlength_e'].'" value="http://"') . tag('br')."\n"
@@ -632,10 +632,10 @@ function bookstore() {
     . '<textarea id="bs_description_area" name="book_add_description" class="bs_textarea" rows="'.$pcf['area_height'].'" cols="'.$pcf['area_width'].'" maxlength="'.$pcf['book_maxlength_f'].'" required></textarea>' . tag('br')."\n"
 /* book Image Upload */
     . '<label class="bs_label" for="bs_book_add_image_input"><span class="bs_require">*</span>'.$ptx['bs_addimg'].'</label>'."\n"
-    . tag('input type="file" id="bs_book_add_image_input" name="book_add_image" $bs_cover_required '). tag('br')."\n"
+    . tag('input type="file" id="bs_book_add_image_input" name="book_add_image" required '). tag('br')."\n"
 /* required field warning */
     . tag('hr')."\n"
-    . '<span class="bs_require">*</span>- '.$ptx['bs_books_required'].'</span>'.tag('br')."\n";
+    . '<span class="bs_require">*</span>- '.$ptx['bs_books_required'].tag('br')."\n";
 /* book Approve Message */
     if ($pcf['book_approve'] == "false") {
       $bs_output .=
