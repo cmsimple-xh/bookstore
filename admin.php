@@ -89,7 +89,8 @@ function bookstore_system_check()
 /**
  * Handle the plugin administration.
  */
-if(isset($bookstore) && $bookstore == 'true')
+if(function_exists('XH_wantsPluginAdministration') && XH_wantsPluginAdministration('bookstore')
+  || isset($bookstore) && $bookstore == 'true')
 {
   $ERROR = '';
   $plugin = basename(dirname(__FILE__), "/");
