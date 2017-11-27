@@ -77,7 +77,7 @@ $(document).ready(function()
     autoOpen : false,
     minWidth : 610,
     position : ["center","top"],
-    title: "<img src=\"plugins/bookstore/bookstore.png\" width=\"48\" height=\"48\" alt=\"Book Store\" />",
+    title: "Book Store",
     resizable: true,
     show: 'slide',
     modal: true
