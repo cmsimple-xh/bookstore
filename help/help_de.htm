@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <title>BookStore_XH - Handbuch</title>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type" />
+    <meta name="content-language" content="de" />
+    <meta name="author" content="Christoph M. Becker" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  </head>
+  <body>
+    <h1 style="text-align: center">BookStore_XH - ein CMSimple_XH-Plugin</h1><img style="margin: -10px 20px 0px 0px; width: 128px; display: block; float: left; height: 128px" src="../bookstore.png" />
+    <h5>Version: 1.1 beta<br />
+			Voraussetzungen: PHP, jQuery<br />
+			Author: Любомир Кудрай<br />
+			Website: <a href="http://bookstore.comoj.com/" target="_blank">BookStore</a><br />
+			<a href="help.htm" target="_blank">Englische Hilfe</a>,
+			<a href="help_ru.htm" target="_blank">Russische Hilfe</a>
+		</h5>
+    <h2 name="notice">Beschreibung</h2>
+    <p>Erstellen und Verwalten eines Online-Bücher-Katalogs.</p>
+    <p>Das Plugin kann verwendet werden, um andere Kataloge zu verwalten – Personen, Software usw. Es genügt, die entsprechenden Sprachtexte und die Anzeige in der Konfiguration anzupassen.</p>
+    <h2>Features</h2>
+    <ul>
+			<li>Buch-Datensätze anlegen</li>
+			<li>Umschlagbild hoch laden</li>
+      <li>Buchsuche nach Schlagwort</li>
+      <li>Rubrik-Filter</li>
+      <li>Konfiguration der Bücher pro Seite</li>
+      <li>Konfiguration der Bild-Uploads</li>
+      <li>Bearbeiten und Löschen von Buch-Datensätzen</li>
+      <li>Hinzufügen und Löschen von Rubriken</li>
+    </ul>
+    <ul id="nav">
+			<li><a href="#notice">Wichtiger Hinweis</a></li>
+			<li><a href="#requirements">Voraussetzungen</a></li>
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#settings">Einstellungen</a></li>
+			<li><a href="#usage">Verwendung</a></li>
+			<li><a href="#license">Lizenz</a></li>
+			<li><a href="#credits">Danksagung</a></li>
+    </ul>
+    <div id="body">
+
+<h2><a name="notice">Wichtiger Hinweis</a></h2>
+<p><strong>Die aktuelle Version von BookStore_XH ist BETA-Software. Vorsicht bei der Verwendung!</strong></p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="requirements">Voraussetzungen</a></h2>
+<p>BookStore_XH ist ein Plugin für CMSimple_XH. Es benötigt eine UTF-8 kodierte Version.</p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="installation">Installation</a></h2>
+<p>Die Installation erfolgt wie bei vielen anderen CMSimple_XH-Plugins auch.
+Im <a href="http://www.cmsimple-xh.org/wiki/doku.php/de:installation">
+CMSimple_XH-Wiki</a> finden Sie weitere Informationen.</p>
+<ol>
+<li>Sichern Sie die Daten auf Ihrem Server.</li>
+<li>Entpacken Sie die ZIP-Datei auf Ihrem Computer.</li>
+<li>Laden Sie das gesamte Verzeichnis bookstore/ auf Ihren Server in das CMSimple_XH-Plugin-Verzeichnis hoch.</li>
+<li>Vergeben Sie Schreibrechte für die Unterverzeichnisse data/, config/, css/ und languages/.</li>
+<li>Gehen Sie zu "Plugins"&rarr;"BookStore" im Administrationsbereich, und prüfen Sie, ob alle Voraussetzungen erfüllt sind.</li>
+</ol>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="usage">Verwendung</a></h2>
+<p name="path">Rufen Sie das Plugin im Template wie folgt auf:</p>
+<p style="font-family: monospace; font-size: 18px;"><span class="code">&lt;?php echo</span>&nbsp;bookstore();&nbsp;</span><span class="code">?></span></p>
+<p name="path">Rufen Sie das Plugin auf einer Seite wie folgt auf:</p>
+<p style="font-family: monospace; font-size: 18px;"><span class="code">{{{PLUGIN:</span>bookstore();</span><span class="code">}}}</span></p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="settings">Einstellungen</a></h2>
+<p>Die Konfiguration des Plugins erfolgt wie bei vielen anderen CMSimple_XH-Plugins auch im Administrationsbereich der Homepage. Wählen Sie unter "Plugins" "BookStore" aus.</p>
+<p>Sie können die Voreinstellungen von BookStore_XH in der Plugin-Konfiguration ändern. Beim Überfahren der Hilfe-Icons mit der Maus werden Hinweise zu den Einstellungen angezeigt.</p>
+<p>Die Lokalisierung wird unter "Sprache" vorgenommen. Sie können die Zeichenketten in Ihre eigene Sprache übersetzen, oder sie entsprechend Ihren Anforderungen anpassen.</p>
+<p>Das Aussehen von BookStore_XH kann unter "Stylesheet" angepasst werden.</p>
+<p>Weitere Einstellungen können in <span class="code">plugins/bookstore/js/bookstore.js</span> vorgenommen werden.</p>
+<!--
+<p>Die Optionen werden im <a href="http://bookstore.comoj.com/manual.html#config">Benutzerhandbuch von BookStore</a> erklärt.</p>
+-->
+<dl>
+<dt>bookstore.js</dt>
+<dd>- Ändern Sie die Textlängenbeschränkungen im <span class="code">/* symbols limit */</span> Block.</dd>
+<dd>- Stellen Sie Paginierung der Tabelle im <span class="code">/* tablePagination */</span> Block ein.
+<ul>
+<li><i>firstArrow</i> - Bild - Geben Sie ein Bild an, um das Standard-Bild zu ändern. Voreinstellung: (new Image()).src="./path/first.gif"</li>
+<li><i>prevArrow</i> - Bild - Geben Sie ein Bild an, um das Standard-Bild zu ändern. Voreinstellung: (new Image()).src="./path/prev.gif"</li>
+<li><i>lastArrow</i> - Bild - Geben Sie ein Bild an, um das Standard-Bild zu ändern. Voreinstellung: (new Image()).src="./path/last.gif"</li>
+<li><i>nextArrow</i> - Bild - Geben Sie ein Bild an, um das Standard-Bild zu ändern. Voreinstellung: (new Image()).src="./path/next.gif"</li>
+<li><i>topNav</i> - Bool'scher Wert - gibt an, ob die Paginierung oben oder unten angezeigt werden soll. Voreinstellung: false</li>
+<li><i>rowsPerPage</i> - Zahl - gibt die Anzahl der Zeilen pro Seite an. Voreinstellung: 10</li>
+<li><i>currPage</i> - Zahl - gibt die Startseite an. Voreinstellung: 1</li>
+<li><i>optionsForRows</i> - Feld - Damit können die Werte für die Zeilen pro Seite Auswahlbox angegeben werden. Voreinstellung: [2.5,10,20,50,100]</li>
+<li><i>ignoreRows</i> - Feld - Damit können die zu ignorierenden Tabellenzeilen ('tr') angegeben werden. Es wird empfohlen, dass diese Zeilen unsichtbar sein sollen, da ansonsten die Seitenzählung durcheinander gerät. Voreinstellung: []
+</ul>
+</dd>
+<dd>- Wenn die Eingabe eines neuen Buchs nicht in einem Dialog erfolgen soll, kommentieren Sie einfach den Code im <span class="code">/* show form as dialog window */</span> Block aus und entfernen Sie die Kommentare im <span class="code">/* show/hide form only */</span> Block.</dd>
+
+<dt>jquery.easy-confirm-dialog.js</dt>
+<dd><span class="code">// set locale<br />
+var locale = jQuery.extend({}, $.easyconfirm.locales.<span style="color:red">deDE</span>, options.locale);</span>
+</dd>
+<dt>Formular für ein neues Buch</dt>
+<dd>- Wenn die Eingabe eines neuen Buchs nicht in einem Dialog erfolgen soll, kommentieren Sie einfach den Code im <span class="code">/* show form as dialog window */</span> Block aus und entfernen Sie die Kommentare im <span class="code">/* show/hide form only */</span> Block.</dd>
+<dt></dt>
+<dd></dd>
+<dt></dt>
+<dd></dd>
+
+<dt>Bücher ohne Umschlagbild</dt>
+<dd>- Wenn das Buch kein Umschlagbild hat, wird statt dessen ein Standard-Bild angezeigt. Selbstverständlich können Sie ein eigenes erzeugen...</dd>
+<dd>- Laden Sie dazu einfach ein Bild mit dem Namen <span class="code">bookstore_nocover.png</span> in das <span class="code">plugins/bookstore/images/</span> Verzeichnis hoch (<span style="color:red">nicht</span> <span class="code">plugins/bookstore/data/images/</span>). Wenn das Umschlagbild fehlt, wird das <span  class="code">bookstore_nocover.png</span> Bild automatisch ins Zielverzeichnis kopiert.</dd>
+
+<dt>Anzeigereihenfolge</dt>
+<dd>Beachten Sie, dass die zuletzt hinzugefügten Bücher zuerst angezeigt werden.</dd>
+<dt>Anzeige der Einträge</dt>
+<dd>Die Rubrik, der Buchtitel und Autor werden immer angezeigt. Welche anderen Daten angezeigt werden, ist konfigurierbar.</dd>
+<dt></dt>
+<dd></dd>
+
+</dl>
+
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="license">Lizenz</a></h2>
+<p><b>BookStore_XH</b> kann unter Einhaltung der <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPL v.3</a> verwendet werden.</p>
+<p>&copy; 2012 Lubomyr Kudray</p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="credits">Danksagung</a></h2>
+
+<p>Das Plugin-Icon wurde von <a href="http://akterpnd.livejournal.com/41020.html/" target="_blank">ARTkasimov (akterpnd)</a>. Vielen Dank für die Veröffentlichung dieses freien Icons.</p>
+
+<p>Dieses Plugin verwendet die freie PHP-Klasse <span style="color: blue; font-family: monospace; font-size: 18px;">class.upload.php</span> zum Datei-Upload und zur Bildbearbeitung. Vielen Dank an <a href="http://www.verot.net/php_class_upload.htm" target="_blank">Colin VEROT</a> für die Veröffentlichung unter der GNU GENERAL PUBLIC LICENSE (GPL).</p>
+
+<p>Dieses Plugin verwendet <a href="http://stefangabos.ro/php-libraries/zebra-pagination/" target="_blank">Zebra_Pagination</a>, eine allgemeine in PHP geschriebene Paginierungs-Klasse. Vielen Dank an <a href="http://stefangabos.ro/" target="_blank">Stefan Gabos</a> für das Veröffentlichen unter <a href="http://www.gnu.org/licenses/lgpl-3.0.txt" target="_blank">LGPL</a>.</p>
+
+<p>Diese Plugin verwendet das "masked input plugin" für die jQuery-Bibliothek. Vielen Dank an <a href="http://digitalbush.com/projects/masked-input-plugin/" target="_blank">Josh Bush</a> für die Veröffentlichung unter seiner eigenen freien Lizenz</p>
+
+<p>Diese Plugin verwendet das jQuery Plugin <a href="http://neoalchemy.org/tablePagination.html" target="_blank">Table Pagination</a> um eine Paginierung für Tabellen zu erzeugen. Vielen Dank an Ryan Zielke für die Veröffentlichung unter der <a href="http://www.opensource.org/licenses/mit-license.php" target="_blank">MIT</a> Lizenz.</p>
+
+<p>Dieses Plugin verwendet Icons von <a href="http://www.iconsearch.ru/" target="_blank">iconsearch.ru</a>. Vielen Dank dafür, dass diese Icons frei verfügbar gemacht werden.</p>
+
+<p>Und vielen Dank an <a class="pushLink" href="http://3-magi.net/" target="_blank">Christoph M. Becker</a> für Hilfe und Tipps.</p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+<div>&nbsp;</div>
+</div>
+</body>
+</html>

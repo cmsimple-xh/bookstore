@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <title>BookStore_XH - Manual</title>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type" />
+    <meta name="content-language" content="ru" />
+    <meta name="author" content="Любомир Кудрай" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  </head>
+  <body>
+    <h1 style="text-align: center">BookStore_XH - CMSimple_XH плагин</h1><img style="margin: -10px 20px 0px 0px; width: 128px; display: block; float: left; height: 128px" src="../bookstore.png" />
+    <h5>Версия: 1.1 beta<br />
+			Требования: PHP, jQuery<br />
+			Автор: Любомир Кудрай<br />
+			Сайт: <a href="http://bookstore.comoj.com/" target="_blank">BookStore</a><br />
+			<a href="help.htm" target="_blank">English help</a> <a href="help_de.htm" target="_blank">German Help</a>
+		</h5>
+    <h2 name="notice">Описание</h2>
+    <p>Плагин предназначен для создания онлайн каталога книг и управления каталогом.</p>
+    <p>Плагин можно использовать для хранения самых различных данных - картотеки пользователей, программного обеспечения и пр. Для этого достаточно изменить соответствующие языковы строки на нужные и настроить отображение данных в Конфигурации.</p>
+    <h2>Возможности</h2>
+    <ul>
+      <li>Добавление книг.</li>
+      <li>Загрузка изображения обложки.</li>
+      <li>Поиск книг по ключевому слову</li>
+      <li>Сортировка книг по разделам.</li>
+      <li>Настройка отображения количества книг на странице.</li>
+      <li>Настройка загружаемого изображения.</li>
+      <li>Редактирование и удаление записи.</li>
+      <li>Добавление и удаление разделов.</li>
+    </ul>
+    <ul id="nav">
+			<li><a href="#notice">Важно</a></li>
+			<li><a href="#requirements">Требования</a></li>
+			<li><a href="#installation">Установка</a></li>
+			<li><a href="#settings">Настройки</a></li>
+			<li><a href="#usage">Использование</a></li>
+			<li><a href="#license">Лицензия</a></li>
+			<li><a href="#credits">Благодарности</a></li>
+    </ul>
+    <div id="body">
+
+<h2><a name="notice">Важно</a></h2>
+<p><strong>Текущая версия BookStore_XH - BETA. Используйте плагин с необходимыми предосторожностями!</strong></p>
+<div class="toplink"><a href="#">вверх</a></div>
+
+<h2><a name="requirements">Требования</a></h2>
+<p>BookStore_XH - плагин для CMSimple_XH. Для работы плагина необходима версия UTF-8.</p>
+<div class="toplink"><a href="#">вверх</a></div>
+
+<h2><a name="installation">Установка</a></h2>
+<p>Установка плагина не отличается от установки многих других плагинов CMSimple_XH.
+Более подробно с особенностями установки можно ознакомиться на странице <a href="http://www.cmsimple-xh.com/wiki/doku.php/manuals:users_manual:plugins:installation">
+CMSimple_XH wiki</a>.</p>
+<ol>
+<li>Создайте резервную копию вашего сайта.</li>
+<li>Разархивируйте дистрибутив в папку на вашем компьютере.</li>
+<li>Загрузите каталог bookstore/ на серевер в директорию плагинов CMSimple_XH.</li>
+<li>Укажите права доступа для подкаталогов data/, config/, css/ and languages/.</li>
+<li>Перейдите в режим администрирования "Plugins"&rarr;"BookStore" для проверки соответствия требованиям.</li>
+</ol>
+<div class="toplink"><a href="#">вверх</a></div>
+
+<h2><a name="usage">Использование</a></h2>
+<p name="path">Вызов плагина в шаблоне: </p>
+<p style="font-family: monospace; font-size: large"><span style="color: blue; font-weight: 700">&lt;?php echo</span>&nbsp;bookstore();&nbsp;</span><span style="color: blue">?></span></p>
+<p name="path">Вызов плагина на странице: </p>
+<p style="font-family: monospace; font-size: large"><span style="color: blue; font-weight: 700">{{{PLUGIN:</span>bookstore();</span><span style="color: blue">}}}</span></p>
+<div class="toplink"><a href="#">вверх</a></div>
+
+<h2><a name="settings">Настройки</a></h2>
+<p>Конфигурирование плагина в режиме администратора не отличается от конфигурирования большинства других плагинов CMSimple_XH. Выберите "BookStore" в меню "Плагины".</p>
+<p>Вы можете изменить настройки BookStore_XH по умолчанию на вкладке "Конфигурация". Поместив курсор мыши на иконке помощи, можно просмотреть подсказки для соотвествующей опции.</p>
+<p>Локализация доступна на вкладке "Язык". Вы можете перевести языковые строки на ваш язык, или изменить строки в соответствии с вашими  потребностями.</p>
+<p>Настройка стиля плагина доступна на вкладке "Стиль".</p>
+<p>Другие настройки плагина доступны в <span style="color: blue; font-family: monospace; font-size: 18px;">plugins/bookstore/js/bookstore.js</span>. <!-- Дополнительные сведения по настройке плагина доступны на странице <a href="http://bookstore.comoj.com/manual.html#config">Руководство пользователя BookStore</a>. --></p>
+<dl>
+<dt>bookstore.js</dt>
+<dd>- Измените ограничение вводимого текста в блоке <span class="code">/* symbols limit */</span>.</dd>
+<dd>- Настройте разбиение записей таблицы в блоке <span class="code">/* tablePagination */</span>.
+<ul>
+<li><i>firstArrow</i> - Изображение - используйте свое изображение вместо изображения по умолчанию. По умолчанию: (new Image()).src="./путь/first.gif"</li>
+<li><i>prevArrow</i> - Изображение - используйте свое изображение вместо изображения по умолчанию. По умолчанию: (new Image()).src="./путь/prev.gif"</li>
+<li><i>lastArrow</i> - Изображение - используйте свое изображение вместо изображения по умолчанию. По умолчанию: (new Image()).src="./путь/last.gif"</li>
+<li><i>nextArrow</i> - Изображение - используйте свое изображение вместо изображения по умолчанию. По умолчанию: (new Image()).src="./путь/next.gif"</li>
+<li><i>topNav</i> - Логическое - используется для определения расположения блока пагинации - над или под таблицей. По умолчанию: false</li>
+<li><i>rowsPerPage</i> - Число - используется для определения начального значения количества записей на странице. По умолчанию: 10</li>
+<li><i>currPage</i> - Number - используется для определения начальной страницы. По умолчанию: 1</li>
+<li><i>optionsForRows</i> - Массив - используется для задания вариантов количества записей на странице. По умолчанию: [2,5,10,20,50,100]</li>
+<li><i>ignoreRows</i> - Массив - используется для определения неотображаемых строк - 'tr' таблицы. Следует использовать для скрытия определенных данных и, соотвественно, разбиения на страницы. По умолчанию: [] (отключено).
+</ul>
+</dd>
+<dt>jquery.easy-confirm-dialog.js</dt>
+<dd><span class="code">// set locale<br />
+var locale = jQuery.extend({}, $.easyconfirm.locales.<span style="color:red">enUS</span>, options.locale);</span>
+</dd>
+<dt>Форма как диалог</dt>
+<dd>- Если вы не хотите отображать форму добавления новой книги как диалог, закомментируйте код в блоке <span class="code">/* show form as dialog window */</span> и раскомментируйте код в блоке <span class="code">/* show/hide form only */</span>.</dd>
+
+
+<dt>Book without cover</dt>
+<dd>- If book not have cover image, instead default image is displayed. Of course, you may create you own...</dd>
+<dd>- Just upload image with name <span class="code">bookstore_nocover.png</span> to <span class="code">plugins/bookstore/images/</span> (<span style="color:red">not</span> <span class="code">plugins/bookstore/data/images/</span>) directory. If cover image is missing, <span  class="code">bookstore_nocover.png</span> image copied to destination directory automatically. </dd>
+<dt>Display order</dt>
+<dd>- Note, the last added book is displayed first.</dd>
+
+<dt>Отображение записей</dt>
+<dd>По умолчанию, необходимыми для отображения являются данные о разделе, названии и авторе книги. Отображение других данных настраивается в Конфигурации.</dd>
+
+
+<dt></dt>
+<dd></dd>
+</dl>
+
+
+<div class="toplink"><a href="#">вверх</a></div>
+
+<h2><a name="license">Лицензия</a></h2>
+<p><b>BookStore_XH</b> распространяется по лицензии <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPL v.3</a>.</p>
+<p>&copy; 2012 Любомир Кудрай</p>
+<div class="toplink"><a href="#">вверх</a></div>
+
+<h2><a name="credits">Благодарности</a></h2>
+
+<p>Иконка плагина создана <a href="http://akterpnd.livejournal.com/41020.html/" target="_blank">ARTkasimov (akterpnd)</a>. Разработчик плагина выражает благодарность за разрешение свободного использования изображения.</p>
+
+<p>Плагин использует свободно распространяемый класс <span style="color: blue; font-family: monospace; font-size: 18px;">class.upload.php</span> для загрузки и обработки изображений, разработанный <a href="http://www.verot.net/php_class_upload.htm" target="_blank">Colin VEROT</a> и распространяемый по лицензии GNU GENERAL PUBLIC LICENSE (GPL).</p>
+
+<p>Плагин использует <a href="http://stefangabos.ro/php-libraries/zebra-pagination/" target="_blank">Zebra_Pagination</a>, класс разбиения на страницы, разработанный <a href="http://stefangabos.ro/" target="_blank">Stefan Gabos</a> и распространяемый по лицензии <a href="http://www.gnu.org/licenses/lgpl-3.0.txt" target="_blank">LGPL</a>.</p>
+
+<p>Плагин использует библиотеку jQuery для фильтрации ввода в текстовое поле, разработанную <a href="http://digitalbush.com/projects/masked-input-plugin/" target="_blank">Josh Bush</a> и распространяему по особой лицензии.</p>
+
+<p>Плагин использует распространяемую по лицензии <a href="http://www.opensource.org/licenses/mit-license.php" target="_blank">MIT</a> библиотеку jQuery <a href="http://neoalchemy.org/tablePagination.html" target="_blank">Table Pagination</a> для создания постраничной табличной навигации.</p>
+
+<p>Плагин использует иконки, предоставляемые <a href="http://www.iconsearch.ru/" target="_blank">iconsearch.ru</a>.</p>
+
+<p>А также, огромная благодарность <a class="pushLink" href="http://3-magi.net/" target="_blank">Christoph M. Becker</a>, без помощи которого данный плагин мог бы не состояться.</p>
+
+<div class="toplink"><a href="#">вверх</a></div>
+<div>&nbsp;</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <title>BookStore_XH - Manual</title>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type" />
+    <meta name="content-language" content="ru" />
+    <meta name="author" content="Lubomyr Kudray" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  </head>
+  <body>
+    <h1 style="text-align: center">BookStore_XH - a CMSimple_XH Plugin</h1><img style="margin: -10px 20px 0px 0px; width: 128px; display: block; float: left; height: 128px" src="../bookstore.png" />
+    <h5>Version: 1.1 beta<br />
+			Requirements: PHP, jQuery<br />
+			Author: Любомир Кудрай<br />
+			Site: <a href="http://bookstore.comoj.com/" target="_blank">BookStore</a><br />
+			<a href="help_de.htm" target="_blank">German Help</a>  <a href="help_ru.htm" target="_blank">Russian Help</a>
+		</h5>
+    <h2 name="notice">Description</h2>
+    <p>Create and manage online book catalogue.</p>
+    <p>The plugin can be used to store a variety of data - filing users, software, etc. It's enough to set the appropriate language strings on one and customize the display of data in the Сonfig.</p>
+    <h2>Features</h2>
+    <ul>
+			<li>Create book record</li>
+			<li>Upload cover image</li>
+      <li>Books search by keyword</li>
+      <li>Section filter</li>
+      <li>Book per page setting</li>
+      <li>Uploaded image setting</li>
+      <li>Book record edit and delete</li>
+      <li>Section add and delete</li>
+    </ul>
+    <ul id="nav">
+			<li><a href="#notice">Important Notice</a></li>
+			<li><a href="#requirements">Requirements</a></li>
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#settings">Settings</a></li>
+			<li><a href="#usage">Usage</a></li>
+			<li><a href="#license">License</a></li>
+			<li><a href="#credits">Credits</a></li>
+    </ul>
+    <div id="body">
+
+<h2><a name="notice">Important Notice</a></h2>
+<p><strong>The current version of BookStore_XH is BETA software. Use with caution!</strong></p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="requirements">Requirements</a></h2>
+<p>BookStore_XH is a plugin for CMSimple_XH. It requires an UTF-8 encoded version.</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="installation">Installation</a></h2>
+<p>The installation is done as with many other CMSimple_XH plugins.
+See the <a href="http://www.cmsimple-xh.com/wiki/doku.php/manuals:users_manual:plugins:installation">
+CMSimple_XH wiki</a> for further details.</p>
+<ol>
+<li>Backup the data on your server.</li>
+<li>Unzip the distribution on your computer.</li>
+<li>Upload the whole directory bookstore/ to your server into CMSimple_XH's plugin directory.</li>
+<li>Set write permissions to the subdirectories data/, config/, css/ and languages/.</li>
+<li>Switch to "Plugins"&rarr;"BookStore" in the back-end to check if all requirements are fulfilled.</li>
+</ol>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="usage">Usage</a></h2>
+<p name="path">Call pludin in template: </p>
+<p style="font-family: monospace; font-size: 18px;"><span class="code">&lt;?php echo</span>&nbsp;bookstore();&nbsp;</span><span class="code">?></span></p>
+<p name="path">Call plugin on page: </p>
+<p style="font-family: monospace; font-size: 18px;"><span class="code">{{{PLUGIN:</span>bookstore();</span><span class="code">}}}</span></p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="settings">Settings</a></h2>
+<p>The plugin's configuration is done as with many other CMSimple_XH plugins in the website's back-end. Select "BookStore" from "Plugins".</p>
+<p>You can change the default settings of BookStore_XH in "Config". Hints for the options will be displayed when hovering over the help icons with your mouse.</p>
+<p>Localization is done in "Language". You can translate the character strings to your own language, or customize them according to your needs.</p>
+<p>The style of BookStore_XH can be customized in "Stylesheet".</p>
+<p>Further configuration can be done in <span class="code">plugins/bookstore/js/bookstore.js</span>.</p>
+<!--
+<p>The options are explained in <a href="http://bookstore.comoj.com/manual.html#config">BookStore's user manual</a>.</p>
+-->
+<dl>
+<dt>bookstore.js</dt>
+<dd>- Change text length limit in <span class="code">/* symbols limit */</span> block.</dd>
+<dd>- Set table pagination in <span class="code">/* tablePagination */</span> block.
+<ul>
+<li><i>firstArrow</i> - Image - Pass in an image to replace default image. Default: (new Image()).src="./path/first.gif"</li>
+<li><i>prevArrow</i> - Image - Pass in an image to replace default image. Default: (new Image()).src="./path/prev.gif"</li>
+<li><i>lastArrow</i> - Image - Pass in an image to replace default image. Default: (new Image()).src="./path/last.gif"</li>
+<li><i>nextArrow</i> - Image - Pass in an image to replace default image. Default: (new Image()).src="./path/next.gif"</li>
+<li><i>topNav</i> - Boolean - used to determine if the pagination should display on top or bottom. Default: false</li>
+<li><i>rowsPerPage</i> - Number - used to determine the starting rows per page. Default: 10</li>
+<li><i>currPage</i> - Number - This is to determine what the starting current page is. Default: 1</li>
+<li><i>optionsForRows</i> - Array - This is to set the values on the rows per page. Default: [2.5,10,20,50,100]</li>
+<li><i>ignoreRows</i> - Array - This is to specify which 'tr' rows to ignore. It is recommended that you have those rows be invisible as they will mess with page counts. Default: []
+</ul>
+</dd>
+<dd>- If you don't wont show new book form as dialog, just comment out code in <span class="code">/* show form as dialog window */</span> block and uncomment code in <span class="code">/* show/hide form only */</span> block.</dd>
+
+<dt>jquery.easy-confirm-dialog.js</dt>
+<dd><span class="code">// set locale<br />
+var locale = jQuery.extend({}, $.easyconfirm.locales.<span style="color:red">enUS</span>, options.locale);</span>
+</dd>
+<dt>New Book Form</dt>
+<dd>- If you do not want to display add new book form as a dialogue, comment out the code in the <span class="code">/*show form as dialog window */</span> and uncomment the code in the <span class="code">/* show/hide form only */</span>.</dd>
+<dt></dt>
+<dd></dd>
+<dt></dt>
+<dd></dd>
+
+<dt>Book without cover</dt>
+<dd>- If book not have cover image, instead default image is displayed. Of course, you may create you own...</dd>
+<dd>- Just upload image with name <span class="code">bookstore_nocover.png</span> to <span class="code">plugins/bookstore/images/</span> (<span style="color:red">not</span> <span class="code">plugins/bookstore/data/images/</span>) directory. If cover image is missing, <span  class="code">bookstore_nocover.png</span> image copied to destination directory automatically. </dd>
+<dt>Display order</dt>
+<dd>- Note, the last added book is displayed first.</dd>
+
+<dt>Displaying entries</dt>
+<dd>By default, only data of section, book title and author is nesessary.  Displaying of other data is configurable.</dd>
+
+
+<dt></dt>
+<dd></dd>
+<dt></dt>
+<dd></dd>
+<dt></dt>
+<dd></dd>
+
+
+</dl>
+
+
+
+
+
+
+
+
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="license">License</a></h2>
+<p><b>BookStore_XH</b> is licensed under <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPL v.3</a>.</p>
+<p>&copy; 2012 Lubomyr Kudray</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="credits">Credits</a></h2>
+
+<p>The plugin icon is designed by <a href="http://akterpnd.livejournal.com/41020.html/" target="_blank">ARTkasimov (akterpnd)</a>. Many thanks for publishing this free icon.</p>
+
+<p>This plugin uses free PHP class <span style="color: blue; font-family: monospace; font-size: 18px;">class.upload.php</span> for file uploading and image manipulating. Many thanks to <a href="http://www.verot.net/php_class_upload.htm" target="_blank">Colin VEROT</a> for releasing it under GNU GENERAL PUBLIC LICENSE (GPL).</p>
+
+<p>This plugin uses <a href="http://stefangabos.ro/php-libraries/zebra-pagination/" target="_blank">Zebra_Pagination</a>, a generic pagination class written in PHP. Many thanks to <a href="http://stefangabos.ro/" target="_blank">Stefan Gabos</a> for releasing and distributed it under <a href="http://www.gnu.org/licenses/lgpl-3.0.txt" target="_blank">LGPL</a>.</p>
+
+<p>This plugin uses masked input plugin for the jQuery library. Many thanks to <a href="http://digitalbush.com/projects/masked-input-plugin/" target="_blank">Josh Bush</a> for releasing it under his own license.</p>
+
+<p>This plugin uses jQuery library <a href="http://neoalchemy.org/tablePagination.html" target="_blank">Table Pagination</a> to create a pagination element under a table element. Many thanks to Ryan Zielke for releasing it under the <a href="http://www.opensource.org/licenses/mit-license.php" target="_blank">MIT</a> licenses.</p>
+
+<p>This plugin uses icon from <a href="http://www.iconsearch.ru/" target="_blank">iconsearch.ru</a>. Many thanks for making these icons freely available.</p>
+
+<p>And huge thanks to <a class="pushLink" href="http://3-magi.net/" target="_blank">Christoph M. Becker</a> for big help and advices.</p>
+<div class="toplink"><a href="#">back to top</a></div>
+<div>&nbsp;</div>
+</div>
+</body>
+</html>

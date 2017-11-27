@@ -1,0 +1,51 @@
+.tablePagination { 
+  background-color: #666;
+  color:#fff;
+  font-weight: 700; 
+  height: 28px;
+  margin:-15px 0 12px 0;
+  padding: 0px 0px; 
+  width: 600px;
+  vertical-align: middle;
+}
+.tablePagination img { 
+  padding: 0px 0px;
+  margin: 0px 2px 0px 2px;
+}
+.tablePagination img:hover { 
+  cursor: pointer;
+}
+/* left block */
+.tablePagination_perPage { /* div */
+  float:left;
+  width: 340px;
+}
+.tablePagination_rowsPerPage { /* select */
+  text-align: center;
+  height: 26px;
+  margin-top:1px;
+  width: 100px;
+}
+.tablePagination_perPage_span {
+  margin: 0px 6px 0 12px;
+}
+/* right block */
+.tablePagination_paginater {
+  margin-right:6px;
+  text-align:right;
+}
+.tablePagination_img_left {
+  float:left;
+}
+.tablePagination_pageof {
+  float:left;
+}
+.tablePagination_currPage_input {
+  margin: 3px 6px 0px 6px;
+  text-align:center;
+}
+.tablePagination_totalPages {
+  margin-left: 0px;
+}
+.tablePagination_img_right {
+}

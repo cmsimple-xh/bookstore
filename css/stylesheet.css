@@ -1,0 +1,448 @@
+/* BookStore_XH - a CMSimple_XH Plugin */
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Philosopher&subset=latin;cyrillic);
+
+img.bookstore_plugin_icon{display:block;
+  float:left;
+  margin:0 0px 0 0;
+  height:128px;
+  width:128px;
+}
+p.bs_para {
+  color:#000;
+  margin:0px 0 0px 0;
+}
+p.distributes{text-align:justify;
+  font-size:80%;
+}
+p.warranty{font-weight:bold;
+  line-height: 1.2em;
+  font-size: 80%;
+  font-variant: small-caps;
+  color: rgb(102,102,102);
+}
+
+.bs_main {
+  border: 1px solid #aaa;
+  background-color: #f5f5f5;
+  color: #333;
+  margin-top: 20px;
+  padding:10px;
+  width:550px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.bs_image {
+  float:left;
+  padding: 0 10px 0px 0;
+  width:150px;
+}
+
+.bs_section_main { 
+  padding-bottom: 150px;
+}
+
+.bs_section {
+  color: #006400;
+  text-shadow: 2px 2px 2px #333; 
+}
+.bs_title {
+  color: #ff00aa;
+}
+.bs_desc {
+  display: inline;
+  color: #006400;
+  text-shadow: 2px 2px 2px #333; 
+}
+.bs_bookfield {
+/*   float:left; */
+  padding: 10px 100px 10px 0;
+}
+.bs_bookfield_edit_name { 
+  float:left;
+  width: 200px;
+}
+.bs_bookfield_edit { 
+  margin: 12px 0px 0px 0px;
+}
+
+.bs_bookfield_edit_img { /* image thumbnail */ 
+  float:left;
+  height: 84px;
+  margin: 0px 12px 0px 6px;
+  width: 50px;
+}
+
+.maxlen { /* плагин maxlength */
+  color:#f00;
+  padding-left: 6px;
+}
+.bs_textarea { margin: 10px 0 10px 0;width: 500px }
+.bs_require { color: #ff0000; padding-right: 6px; }
+.bs_optional { color: #aaaaaa; padding-right: 6px; }
+.bs_input { padding-right: 50px; }
+.bs_edinput { margin: 6px 6px; }
+.bs_string { font-weight: 700;margin: 0px 0px 0px 6px; }
+#add_new_book_btn { margin: 0px 0 0 0; } /* input button */ 
+#add_new_book { /* input button div */ 
+   margin-top:24px;
+}
+#show_book_form { /* new book form div */ 
+   /*display: none*/
+}
+.bs_bookalert {
+  background-color: #f00 ;
+  border: 2px;
+  border-color: #fff;
+  border-style: dotted;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 24px;
+  padding: 3px;
+  text-align: center;
+  width: 300px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#book_table { 
+  border: 1px solid #ccc;
+}
+
+#section_table { 
+  border: 1px solid #ccc;
+}
+/*
+#bs_book_list { 
+  margin:16px 0 16px 0;
+  width: 600px;
+}
+*/
+#bs_section_list {
+  margin:16px 0 16px 0;
+  width: 350px;
+}
+
+.bs_section_block {
+  width: 500px;
+  padding:0 0 8px 0;
+} 
+/*
+a:bs_section_link {
+  color: #006400;
+  text-shadow: 2px 2px 2px #333;  
+  padding: 6px 6px 6px 0;
+} 
+*/
+.bs_section_paging { 
+  padding: 0px 12px 0px 12px;
+  width:550px;
+}
+.bs_section_link_div { 
+  background-color: #f5f5f5;
+  border: 1px solid #aaa;
+  color: #006400;
+  display: none;
+  padding: 12px 10px 12px 10px;
+  text-align: center;
+  text-shadow: 2px 2px 2px #666;  
+  width: 550px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.bs_slide_section_btn {
+  text-shadow: 2px 2px 2px #333;  
+}
+.bs_slide_section_btn_active {
+  background: transparent;
+}
+h5.bs_books_stored { 
+  color:#0094D6;
+  text-shadow: 2px 2px 2px #333;
+}
+.bs_books_stored {
+  width: 100%;
+}
+.bs_book_search,.bs_filter_section,.bs_book_per_page {
+  text-align: left;
+  width: 100%;
+}
+.bs_option {
+  text-align: left;
+  text-indent: 3px;
+}
+.bs_option_text_align { 
+  margin-right: 6px;
+  text-align: right;
+}
+#bs_book_info_div { 
+  margin: 12px 6px 12px 6px;
+}
+.bs_book_info_img { 
+  float: left;
+  margin: 10px 6px 0px 6px;
+  width: 90px;
+}
+span.bs_bookinfo {
+  font-weight: 700;
+  padding-right: 12px;
+}
+span.bs_approve_true {
+  color:#006400;
+}
+span.bs_approve_false {
+  color:#ff0000;
+}
+fieldset.bs_fieldset {
+  border: 1px solid #666;
+  margin: 0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+fieldset.bs_editbook {
+  padding-bottom:6px;
+}  
+fieldset.bs_noborder { border:0 }
+legend.bs_legend {
+  border: 1px;
+  color: #fff;
+	margin: 0 0 0 6px;
+  padding: 0px 6px;
+  background: #333;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+/* table row color - Zebra */
+.bs_even { background-color: #ffe; } /* #3D3D3D; , #ffe; , #FFFFF0; */
+.bs_odd { background-color: #efe; } /* #6E6E6E; , #efe , #FFF8DC; */
+
+.bs_thead {
+  border: 1px solid #ccc;
+  background-color:#666;
+  color:#fff;
+  height: 26px;
+  text-align:center;
+  vertical-align: middle;
+}
+label.bs_label {
+  display: inline-block;
+	padding: 0 6px;
+  text-align: left;
+  width: 150px;
+}
+textarea.bs_area { margin: 3px 6px; }
+/* charCount - style for charCount.js */
+.counter {
+  color:#006400;
+  padding: 0px 6px;
+}
+.warning { color:#f00; } /* 600 */	
+.exceeded { color:#e00; }  /* e00 */
+
+/* tableSorter - style for jquery.tablesorter.pager.js */
+.bs_pager {
+  float: left;
+  margin-bottom: 12px;
+}
+#bs_pagesize {
+  height: 22px;
+  width: 70px;
+}
+.bs_pager_nav {
+  margin-top: 0px;
+  text-align: right;
+}
+#bs_pagedisplay {
+  width:50px;
+  text-align:center;
+  height: 18px;
+}
+
+#bs_first {
+  margin: 8px 0px 0 8px;
+  cursor: pointer;
+} 
+#bs_prev {
+  margin: 8px 8px 0 0;
+  cursor: pointer;
+}
+#bs_next {
+  margin: 8px 0 0 8px;
+  cursor: pointer;
+}
+.last {
+  margin: 8px 0 0 0;
+  cursor: pointer;
+}
+/* end - charCount */
+
+/* Image Enlarger
+   Код увеличителя начинается здесь.
+   Если ваше изображение не связано ссылкой с другой страницей,
+   оставьте ссылку в виде <a href="#nogo"> 
+   Иначе увеличитель не будет работать в IE6
+   */
+.ienlarger {
+	float: left;
+	clear: none; /* Можно установить left или right по необходимости */
+	padding-bottom: 5px; /* Расстояние между миниатюрами. Лучше не трогать данное поле */
+	padding-right: 5px; /* Расстояние между миниатюрами и окружающим текстом */
+}
+.ienlarger a {
+  cursor:default;
+	display:block;
+	text-decoration: none;
+  /* Если добавить правило cursor:default;, то отключится курсор в виде руки */
+}
+.ienlarger a:hover{ /* Не надо изменять тип позиционирования */
+ 	position:relative;
+}
+.ienlarger span img {
+	border: 1px solid #FFFFFF; /* Добавляем рамку вокруг изображения */
+	margin-bottom: 6px; /* /Сдвигаем текст вниз от изображения */
+}
+.ienlarger a span {  /* Для большого изображения и названия */
+	position: absolute;
+	display:none;
+	color: #FFCC00; /* Текст названия */
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px; /* Размер шрифта названия */
+	background-color: #000000;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 13px;
+	padding-left: 10px;
+}
+.ienlarger img { /* Для IE, чтобы не было рамки вокруг ссылки */
+  border-width: 0;
+}
+.ienlarger a:hover span { 
+	display:block;
+	top: -349px; /* Большое изображение выскакивает вверх на 50px от миниатюры */
+	left: 50px; /* Большое изображение выскакивает влево на 50px от миниатюры */
+	z-index: 100;
+  /* Если добавить правило cursor:default;, то отключится курсор в виде руки на большом изображении */
+}
+.resize_thumb {
+	width: 50px; /* Вводим нужный размер миниатюры здесь */
+	height : auto;
+}
+/* end - Image Enlarger - Код увеличителя закончен */
+
+/* tablePagination - style for jquery.tablePagination.0.5.js */
+.tablePagination { 
+  background-color: #666;
+  color:#fff;
+  font-weight: 700; 
+  height: 26px;
+  margin:0px 0 12px 0;
+  padding: 0px 0px; 
+  width: 602px;
+  vertical-align: middle;
+}
+.tablePagination img { 
+  padding: 0px 0px;
+  margin: 0px 2px 0px 2px;
+}
+.tablePagination img:hover { 
+  cursor: pointer;
+}
+/* left block */
+.tablePagination_perPage { /* div */
+  float:left;
+/*  width: 340px; */
+}
+.tablePagination_rowsPerPage { /* select */
+  text-align: center;
+  height: 20px;
+  margin-top:3px;
+  width: 50px;
+}
+.tablePagination_perPage_span {
+  margin: 0px 6px 0 12px;
+}
+/* right block */
+.tablePagination_img_left {
+  float:left;
+  margin-left: 60px;
+}
+.tablePagination_pageof {
+  float:left; 
+}
+.tablePagination_currPage_input {
+  margin: 3px 6px 0px 6px;
+  text-align:center;
+}
+.tablePagination_totalPages {
+  margin-left: 0px;
+}
+.tablePagination_img_right {
+  float:left; 
+}
+/* end - right block */
+/* end - tablePagination style */
+
+/* placeHolder - style for jquery.placeholder.min.js */
+::-webkit-input-placeholder {
+   color: #999;
+   font:12px Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+:-moz-placeholder {
+   color: #999;
+   font:12px Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+.placeholder {
+   color: #999;
+   font:12px Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+/* end - placeHolder style */
+
+/* RollOver - style for rowstyle.js */
+/* These classes are used by the script as rollover effect for table 1 and 2 */
+.tableRollOverEffect1{
+  background-color:#317082;
+  color:#FFF;
+}
+.tableRollOverEffect2{
+  background-color:#000;
+  color:#FFF;
+}
+.tableRowClickEffect1{
+  background-color:#F00;
+  color:#FFF;
+}
+.tableRowClickEffect2{
+  background-color:#00F;
+  color:#FFF;
+}
+/* end - RollOver style */
+
+/* myTooltips - jquery.style-my-tooltips.js */
+#s-m-t-tooltip{
+  background: #333; /* #0094D6; */
+	color:#fff; 
+	display:inline-block; /*Важно!*/
+	font-family:Verdana, Geneva, sans-serif; 
+	font-size:11px;
+	font-weight: 600;
+	line-height:16px;
+	max-width:300px;  
+	padding:6px 8px 8px 8px; 
+	position:fixed; 
+	z-index:10; 
+	/* rounded corners css3*/
+	-moz-border-radius:5px; 
+	-khtml-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	border-radius:5px;
+}
+/* end - myTooltips style */
